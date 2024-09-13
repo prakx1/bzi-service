@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 from flask_cors import CORS
-
+import os
 # Import CORS
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, methods=["GET", "POST"])
 
 # Initialize the OpenAI client with your API key and base URL
 openai = OpenAI(
-    api_key="oPww47Zq2K5xQTUbo6jqZApi0H2tHl",  # Replace with your secret key
+    api_key=os.getenv("OPENAI_API_KEY"),  # Fetching the API key from environment variable
     base_url="https://cloud.olakrutrim.com/v1",  # Your AI vendor's base URL
 )
 # oPww47Zq2K5xQTUbo6jqZApi0H2tHl
