@@ -16,6 +16,7 @@ openai = OpenAI(
 # Define an endpoint to receive stock name and call AI for analysis
 @app.route('/analyze_stock', methods=['POST'])
 def analyze_stock():
+    print("")
     data = request.json
     stock_name = data.get('stock_name')
 
